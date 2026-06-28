@@ -508,7 +508,7 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#hero" class="nav-logo">S. Asiedu</a>
+  <a href="#hero" class="nav-logo">SASIEDU</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#research">Research</a></li>
@@ -551,7 +551,7 @@
   <div class="hero-right">
     <img
       class="hero-photo"
-      src="photo.jpg"
+      src="photo.jpeg"
       alt="Samuel Asiedu"
       onerror="this.style.display='none';document.querySelector('.hero-placeholder').style.display='flex';"
     />
@@ -1019,6 +1019,32 @@
     if (res.ok) alert('Message sent! I will get back to you shortly.');
     else alert('Something went wrong. Please email me directly.');
   }
+function toggleTheme() {
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-btn');
+  if (root.classList.toggle('light-mode')) {
+    root.style.setProperty('--bg','#f5f7fa');
+    root.style.setProperty('--bg2','#edf0f4');
+    root.style.setProperty('--bg3','#e2e7ee');
+    root.style.setProperty('--surface','#d8dfe9');
+    root.style.setProperty('--white','#1a2540');
+    root.style.setProperty('--slate','#3a4a6b');
+    root.style.setProperty('--dim','#6b7a99');
+    btn.textContent = '🌙 Dark';
+  } else {
+    root.style.setProperty('--bg','#0b1120');
+    root.style.setProperty('--bg2','#101828');
+    root.style.setProperty('--bg3','#162033');
+    root.style.setProperty('--surface','#1a2540');
+    root.style.setProperty('--white','#f0f6ff');
+    root.style.setProperty('--slate','#94a3b8');
+    root.style.setProperty('--dim','#64748b');
+    btn.textContent = '☀ Light';
+  }
+}
 </script>
+  <button onclick="toggleTheme()" id="theme-btn" style="position:fixed;bottom:1.5rem;right:1.5rem;
+    z-index:999;padding:0.6rem 1.2rem;background:var(--surface);color:var(--teal);border:1px solid var(--border);
+    font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;cursor:pointer;">☀ Light</button>
 </body>
 </html>
